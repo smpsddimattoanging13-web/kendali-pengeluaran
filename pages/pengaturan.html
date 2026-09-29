@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengaturan - Kendali Pengeluaran</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>💰 Kendali</h2>
+            <p>Pengeluaran</p>
+        </div>
+        <nav>
+            <a href="../index.html">📊 Dashboard</a>
+            <a href="transaksi.html">💳 Transaksi</a>
+            <a href="rekap.html">📅 Rekap Bulanan</a>
+            <a href="kategori.html">🏷️ Kategori</a>
+            <a href="pengaturan.html" class="active">⚙️ Pengaturan</a>
+        </nav>
+    </aside>
+
+    <main class="content">
+        <header class="topbar">
+            <h1>Pengaturan</h1>
+        </header>
+
+        <section class="panel">
+            <h2>💵 Budget Bulanan</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Batas Pengeluaran per Bulan (Rp)</label>
+                    <input type="number" id="monthlyBudget" min="0" step="10000">
+                </div>
+                <div class="form-group" style="align-self: flex-end;">
+                    <button id="saveBudget" class="btn btn-primary">💾 Simpan</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>📤 Export Data</h2>
+            <p>Download data transaksi untuk backup atau analisis.</p>
+            <div class="form-actions">
+                <button id="exportJSON" class="btn btn-secondary">📋 Export JSON</button>
+                <button id="exportCSV" class="btn btn-secondary">📊 Export CSV</button>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>📥 Import Data</h2>
+            <p>Muat data dari file JSON backup.</p>
+            <input type="file" id="importFile" accept=".json">
+        </section>
+
+        <section class="panel danger-zone">
+            <h2>⚠️ Zona Berbahaya</h2>
+            <p>Tindakan ini tidak dapat dibatalkan!</p>
+            <button id="resetData" class="btn btn-danger">🗑️ Hapus Semua Data</button>
+        </section>
+    </main>
+
+    <script src="../js/utils.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/chart.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>
