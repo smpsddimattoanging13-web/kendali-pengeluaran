@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kategori - Kendali Pengeluaran</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>💰 Kendali</h2>
+            <p>Pengeluaran</p>
+        </div>
+        <nav>
+            <a href="../index.html">📊 Dashboard</a>
+            <a href="transaksi.html">💳 Transaksi</a>
+            <a href="rekap.html">📅 Rekap Bulanan</a>
+            <a href="kategori.html" class="active">🏷️ Kategori</a>
+            <a href="pengaturan.html">⚙️ Pengaturan</a>
+        </nav>
+    </aside>
+
+    <main class="content">
+        <header class="topbar">
+            <h1>Kelola Kategori</h1>
+        </header>
+
+        <section class="panel form-panel">
+            <h2>Tambah Kategori Baru</h2>
+            <form id="categoryForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Nama Kategori</label>
+                        <input type="text" id="categoryName" required placeholder="Contoh: Makanan">
+                    </div>
+                    <div class="form-group">
+                        <label>Tipe</label>
+                        <select id="categoryType" required>
+                            <option value="expense">Pengeluaran</option>
+                            <option value="income">Pemasukan</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Emoji/Icon</label>
+                        <input type="text" id="categoryIcon" maxlength="2" placeholder="🍔">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">➕ Tambah</button>
+            </form>
+        </section>
+
+        <section class="panel">
+            <h2>Daftar Kategori</h2>
+            <div id="categoryList" class="category-grid"></div>
+        </section>
+    </main>
+
+    <script src="../js/utils.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/chart.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>
