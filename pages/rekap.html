@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekap Bulanan - Kendali Pengeluaran</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>💰 Kendali</h2>
+            <p>Pengeluaran</p>
+        </div>
+        <nav>
+            <a href="../index.html">📊 Dashboard</a>
+            <a href="transaksi.html">💳 Transaksi</a>
+            <a href="rekap.html" class="active">📅 Rekap Bulanan</a>
+            <a href="kategori.html">🏷️ Kategori</a>
+            <a href="pengaturan.html">⚙️ Pengaturan</a>
+        </nav>
+    </aside>
+
+    <main class="content">
+        <header class="topbar">
+            <h1>Rekap Bulanan</h1>
+            <div class="month-selector">
+                <button id="prevMonth" class="btn-icon">◀</button>
+                <span id="selectedMonth"></span>
+                <button id="nextMonth" class="btn-icon">▶</button>
+            </div>
+        </header>
+
+        <section class="summary-cards">
+            <div class="card card-income">
+                <h3>Total Pemasukan</h3>
+                <p id="monthIncome">Rp 0</p>
+            </div>
+            <div class="card card-expense">
+                <h3>Total Pengeluaran</h3>
+                <p id="monthExpense">Rp 0</p>
+            </div>
+            <div class="card card-balance">
+                <h3>Saldo</h3>
+                <p id="monthBalance">Rp 0</p>
+            </div>
+        </section>
+
+        <section class="dashboard-grid">
+            <div class="panel">
+                <h2>Grafik Harian</h2>
+                <canvas id="dailyChart" width="600" height="300"></canvas>
+            </div>
+            <div class="panel">
+                <h2>Distribusi Kategori</h2>
+                <canvas id="monthlyCategoryChart" width="400" height="300"></canvas>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Detail per Kategori</h2>
+            <table class="recap-table">
+                <thead>
+                    <tr>
+                        <th>Kategori</th>
+                        <th>Jumlah Transaksi</th>
+                        <th>Total</th>
+                        <th>Persentase</th>
+                    </tr>
+                </thead>
+                <tbody id="categoryRecap"></tbody>
+            </table>
+        </section>
+
+        <section class="panel">
+            <h2>Tren 6 Bulan Terakhir</h2>
+            <canvas id="trendChart" width="600" height="250"></canvas>
+        </section>
+    </main>
+
+    <script src="../js/utils.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/chart.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>
