@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaksi - Kendali Pengeluaran</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>💰 Kendali</h2>
+            <p>Pengeluaran</p>
+        </div>
+        <nav>
+            <a href="../index.html">📊 Dashboard</a>
+            <a href="transaksi.html" class="active">💳 Transaksi</a>
+            <a href="rekap.html">📅 Rekap Bulanan</a>
+            <a href="kategori.html">🏷️ Kategori</a>
+            <a href="pengaturan.html">⚙️ Pengaturan</a>
+        </nav>
+    </aside>
+
+    <main class="content">
+        <header class="topbar">
+            <h1>Kelola Transaksi</h1>
+        </header>
+
+        <section class="panel form-panel">
+            <h2 id="formTitle">Tambah Transaksi</h2>
+            <form id="transactionForm">
+                <input type="hidden" id="transactionId">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Tipe</label>
+                        <select id="type" required>
+                            <option value="expense">Pengeluaran</option>
+                            <option value="income">Pemasukan</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Jumlah (Rp)</label>
+                        <input type="number" id="amount" min="0" step="100" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Kategori</label>
+                        <select id="category" required></select>
+                    </div>
+                    <div class="form-group">
+                        <label>Tanggal</label>
+                        <input type="date" id="date" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Catatan</label>
+                    <input type="text" id="note" placeholder="Keterangan transaksi...">
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">💾 Simpan</button>
+                    <button type="button" id="cancelBtn" class="btn btn-secondary" style="display:none;">Batal</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="panel">
+            <div class="filter-bar">
+                <select id="filterMonth"></select>
+                <select id="filterCategory">
+                    <option value="">Semua Kategori</option>
+                </select>
+                <select id="filterType">
+                    <option value="">Semua Tipe</option>
+                    <option value="income">Pemasukan</option>
+                    <option value="expense">Pengeluaran</option>
+                </select>
+            </div>
+            <div id="transactionList" class="transaction-list full"></div>
+        </section>
+    </main>
+
+    <script src="../js/utils.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/chart.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>
