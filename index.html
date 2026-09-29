@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kendali Pengeluaran - Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>💰 Kendali</h2>
+            <p>Pengeluaran</p>
+        </div>
+        <nav>
+            <a href="index.html" class="active">📊 Dashboard</a>
+            <a href="pages/transaksi.html">💳 Transaksi</a>
+            <a href="pages/rekap.html">📅 Rekap Bulanan</a>
+            <a href="pages/kategori.html">🏷️ Kategori</a>
+            <a href="pages/pengaturan.html">⚙️ Pengaturan</a>
+        </nav>
+    </aside>
+
+    <main class="content">
+        <header class="topbar">
+            <h1>Dashboard</h1>
+            <div class="user-info">
+                <span id="currentDate"></span>
+            </div>
+        </header>
+
+        <section class="summary-cards">
+            <div class="card card-income">
+                <h3>Pemasukan Bulan Ini</h3>
+                <p id="totalIncome">Rp 0</p>
+            </div>
+            <div class="card card-expense">
+                <h3>Pengeluaran Bulan Ini</h3>
+                <p id="totalExpense">Rp 0</p>
+            </div>
+            <div class="card card-balance">
+                <h3>Saldo Bulan Ini</h3>
+                <p id="totalBalance">Rp 0</p>
+            </div>
+            <div class="card card-budget">
+                <h3>Sisa Budget</h3>
+                <p id="remainingBudget">Rp 0</p>
+            </div>
+        </section>
+
+        <section class="dashboard-grid">
+            <div class="panel">
+                <h2>Transaksi Terbaru</h2>
+                <div id="recentTransactions" class="transaction-list"></div>
+                <a href="pages/transaksi.html" class="btn-link">Lihat Semua →</a>
+            </div>
+            <div class="panel">
+                <h2>Pengeluaran per Kategori</h2>
+                <canvas id="categoryChart" width="400" height="300"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/utils.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
